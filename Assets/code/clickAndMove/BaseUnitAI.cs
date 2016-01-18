@@ -2,13 +2,18 @@
 
 
 public class BaseUnitAI : MonoBehaviour {
-
-
-    private bool selected = false;
-    private bool onTheMove = false;
+    public float stopDist = .1f;
     public float speed = 1.0f;
-    public float stopDist = .1f;
-    Vector3 targetLocation;
+    public float rotateSpeed = Mathf.PI;
+    private bool selected = false;
+    private bool onTheMove = false;
+    public bool IsSelected
+    {
+        get { return selected; }
+    }
+
+
+    Vector3 targetLocation;
 
     private CharacterController controller;
     
@@ -20,12 +25,11 @@ public class BaseUnitAI : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	
+        //don't look up or down
+        targetLocation = new Vector3(targetLocation.x, this.transform.position.y, targetLocation.z );
+
         if(onTheMove)
         {
-            //rotate
-            var newRotation = Vector3.RotateTowards(controller.transform.forward, targetLocation, Mathf.PI, Mathf.PI);
-            //this.transform.LookAt(targetLocation, Vector3.up);
-            controller.transform.LookAt(targetLocation, Vector3.up);
 
             //move
             var step = speed * Time.deltaTime;
@@ -38,6 +42,13 @@ public class BaseUnitAI : MonoBehaviour {
             if(Vector3.Distance(this.transform.position, targetLocation) <= stopDist)
             {
                 onTheMove = false;
+            }
+            else
+            {
+                //rotate
+                var newRotation = Vector3.RotateTowards(controller.transform.forward, targetLocation, rotateSpeed * Time.deltaTime, 0f );
+                this.transform.rotation = Quaternion.LookRotation(newRotation);
+                this.transform.eulerAngles = new Vector3(0, transform.eulerAngles.y, 0); 
             }
         }
         else

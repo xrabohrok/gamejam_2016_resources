@@ -42,7 +42,7 @@ using UnityEngine;
             if (Input.GetMouseButtonDown(0))
             {
                 var thing = UnitMouseOver.thingClicked;
-                if (thing.GetComponent<BaseUnitAI>() != null)
+                if (thing.GetComponent<BaseUnitAI>() == null)
                 {
                     foreach (var unit in selectedUnits)
                     {
