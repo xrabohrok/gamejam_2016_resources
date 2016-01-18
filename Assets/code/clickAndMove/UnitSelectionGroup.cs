@@ -1,8 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace Assets.code.clickAndMove
-{
+
     [RequireComponent(typeof(ClickControl))]
     public class UnitSelectionGroup : MonoBehaviour {
 
@@ -86,4 +85,4 @@ namespace Assets.code.clickAndMove
         }
 
     }
-}
+

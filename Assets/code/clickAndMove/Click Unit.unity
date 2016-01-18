@@ -96,7 +96,7 @@ GameObject:
   - 33: {fileID: 120676145}
   - 65: {fileID: 120676144}
   - 23: {fileID: 120676143}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -310,6 +310,7 @@ GameObject:
   - 33: {fileID: 1973978493}
   - 23: {fileID: 1973978492}
   - 143: {fileID: 1973978491}
+  - 114: {fileID: 1973978495}
   m_Layer: 8
   m_Name: Capsule
   m_TagString: Untagged
@@ -379,6 +380,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
+--- !u!114 &1973978495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1973978490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39c290bd0654d0041862b244134e8932, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
+  stopDist: 0.1
 --- !u!1 &2009174390
 GameObject:
   m_ObjectHideFlags: 0

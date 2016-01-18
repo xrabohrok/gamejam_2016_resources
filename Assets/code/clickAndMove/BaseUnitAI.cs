@@ -10,14 +10,10 @@ public class BaseUnitAI : MonoBehaviour {
     public float stopDist = .1f;
     Vector3 targetLocation;
 
-    private Animation anim;
     private CharacterController controller;
     
 	// Use this for initialization
 	void Start () {
-        anim = this.GetComponentInChildren<Animation>();
-        if (anim == null)
-            throw new System.Exception("No animator!");
         controller = this.GetComponent<CharacterController>();
 	}
 	
@@ -26,8 +22,6 @@ public class BaseUnitAI : MonoBehaviour {
 	
         if(onTheMove)
         {
-            anim.Play("run");
-
             //rotate
             var newRotation = Vector3.RotateTowards(controller.transform.forward, targetLocation, Mathf.PI, Mathf.PI);
             //this.transform.LookAt(targetLocation, Vector3.up);
@@ -48,7 +42,7 @@ public class BaseUnitAI : MonoBehaviour {
         }
         else
         {
-            anim.Play("idle");
+            //idle here
         }
 	}
 
