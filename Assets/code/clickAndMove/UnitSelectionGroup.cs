@@ -9,7 +9,7 @@ using UnityEngine;
 
         private static List<BaseUnitAI> allUnitsOnMap;
         private static List<BaseUnitAI> selectedUnits;
-
+    
         // Use this for initialization
         void Start () {
             allUnitsOnMap = new List<BaseUnitAI>();
