@@ -5,36 +5,61 @@ public class DialogueBox : MonoBehaviour {
     public float buttonHeightPercent = .05f;
     public float verticalButtonDisp = .6f;
     public float horizontalButtonDisp = .5f;
+    public float lettersPerSecond = 1.5f;
+    public GUISkin customSkin;
 
+    public Camera FrontStuff;
 
-	public Texture2D background;
-	public GUISkin guiSkin;
+    public string theText = "";
 
-	private int originalFontSize = 32;
-	private float nativeResY = 530.0f;
+    private bool finished = false;
+    public bool Finished { get { return finished; } }
+
+    private float currentLetter = 0f;
+    private string _sliceString;
 
     void OnGUI()
     {
-		GUI.skin = guiSkin;
-		GUIStyle backgroundStyle = new GUIStyle();
-		backgroundStyle.normal.background = background;
-		GUI.Label(new Rect(0,0,Screen.width, Screen.height), "", backgroundStyle);
-		GUIStyle menuButton = new GUIStyle(guiSkin.button);
-		menuButton.fontSize = (int) (originalFontSize * (Screen.height/nativeResY));
 
-
-        float buttonWidth = Screen.width * buttonWidthPercent;
-        float buttonHeight = Screen.height * buttonHeightPercent;
+        var buttonWidth = Screen.width * buttonWidthPercent;
+        var buttonHeight = Screen.height * buttonHeightPercent;
 
         var buttonBorder = new Rect(Screen.width * horizontalButtonDisp - buttonWidth / 2,
             Screen.height * verticalButtonDisp + buttonHeight * 1,
             buttonWidth, buttonHeight);
-        
-        GUI.Box(buttonBorder, "SomeText I guess");
 
+        if(theText.Length > 0)
+        {
+            if (Mathf.FloorToInt(currentLetter) < theText.Length)
+            {
+                float newLetter = currentLetter + Time.deltaTime*lettersPerSecond;
+                _sliceString = theText.Substring(0, Mathf.FloorToInt(newLetter));
 
-        
+                currentLetter = newLetter;
+            }
+            else
+            {
+                finished = true;
+            }
+
+            Debug.Log(currentLetter);
+            //finished = Mathf.FloorToInt(currentLetter) >= theText.Length;
+        }
+        GUI.Box(buttonBorder, _sliceString, customSkin.box);
+
+        if(FrontStuff != null)
+            FrontStuff.Render();
+
     }
+
+    public void LoadDialogue(string stuff)
+    {
+        theText = stuff;
+        finished = false;
+        currentLetter = 0f;
+    }
+
+
 
 
 
