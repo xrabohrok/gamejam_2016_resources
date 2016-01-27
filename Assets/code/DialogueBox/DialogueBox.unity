@@ -498,7 +498,7 @@ Camera:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 717793717}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_ClearFlags: 3
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0.019607844}
@@ -986,6 +986,7 @@ GameObject:
   - 92: {fileID: 1398301462}
   - 124: {fileID: 1398301461}
   - 81: {fileID: 1398301460}
+  - 114: {fileID: 1398301465}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1060,6 +1061,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!114 &1398301465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1398301459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c50c518f91511d4cb389e8d96da8bdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonWidthPercent: 0.76
+  buttonHeightPercent: 0.33
+  verticalButtonDisp: 0.32
+  horizontalButtonDisp: 0.5
+  background: {fileID: 0}
+  guiSkin: {fileID: 11400000, guid: dedd1d110ab03044796d32bb396f62bf, type: 2}
 --- !u!1 &1559259475
 GameObject:
   m_ObjectHideFlags: 0
@@ -1556,6 +1574,10 @@ Prefab:
     - target: {fileID: 13700000, guid: 5d28cec646fc4a7428da056b276e1b1c, type: 3}
       propertyPath: m_UpdateWhenOffscreen
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: 5d28cec646fc4a7428da056b276e1b1c, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5d28cec646fc4a7428da056b276e1b1c, type: 3}

@@ -26,14 +26,14 @@ public class DialogueBox : MonoBehaviour {
         float buttonWidth = Screen.width * buttonWidthPercent;
         float buttonHeight = Screen.height * buttonHeightPercent;
 
-        if (GUI.Button(new Rect(Screen.width * horizontalButtonDisp - buttonWidth/2, 
-		                        Screen.height * verticalButtonDisp + buttonHeight * 1 , 
-		                        buttonWidth , buttonHeight), "New Game", menuButton))
-        {
-            //advance
-        }
+        var buttonBorder = new Rect(Screen.width * horizontalButtonDisp - buttonWidth / 2,
+            Screen.height * verticalButtonDisp + buttonHeight * 1,
+            buttonWidth, buttonHeight);
+        
+        GUI.Box(buttonBorder, "SomeText I guess");
 
 
+        
     }
 
 
