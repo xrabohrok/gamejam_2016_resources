@@ -1076,8 +1076,10 @@ MonoBehaviour:
   buttonHeightPercent: 0.33
   verticalButtonDisp: 0.32
   horizontalButtonDisp: 0.5
-  background: {fileID: 0}
-  guiSkin: {fileID: 11400000, guid: dedd1d110ab03044796d32bb396f62bf, type: 2}
+  lettersPerSecond: 5
+  customSkin: {fileID: 11400000, guid: dedd1d110ab03044796d32bb396f62bf, type: 2}
+  FrontStuff: {fileID: 717793721}
+  theText: Here is some text, blah blah blah blah
 --- !u!1 &1559259475
 GameObject:
   m_ObjectHideFlags: 0
@@ -1245,7 +1247,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400024, guid: 5d28cec646fc4a7428da056b276e1b1c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -31.77
+      value: -30.71
       objectReference: {fileID: 0}
     - target: {fileID: 400024, guid: 5d28cec646fc4a7428da056b276e1b1c, type: 3}
       propertyPath: m_LocalRotation.x
@@ -1577,8 +1579,12 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 9500000, guid: 5d28cec646fc4a7428da056b276e1b1c, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 13700000, guid: 5d28cec646fc4a7428da056b276e1b1c, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9f3ac054c6ffe4641baef2d67dae6e06, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5d28cec646fc4a7428da056b276e1b1c, type: 3}
   m_IsPrefabParent: 0

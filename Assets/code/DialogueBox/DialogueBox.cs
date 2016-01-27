@@ -15,6 +15,9 @@ public class DialogueBox : MonoBehaviour {
     private bool finished = false;
     public bool Finished { get { return finished; } }
 
+    private bool wording = false;
+    public bool isTalking { get { return wording; } }
+
     private float currentLetter = 0f;
     private string _sliceString;
 
@@ -36,6 +39,15 @@ public class DialogueBox : MonoBehaviour {
                 _sliceString = theText.Substring(0, Mathf.FloorToInt(newLetter));
 
                 currentLetter = newLetter;
+
+                if (theText[Mathf.FloorToInt(newLetter)] != ' ')
+                {
+                    wording = true;
+                }
+                else
+                {
+                    wording = false;
+                }
             }
             else
             {
