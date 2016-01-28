@@ -35,7 +35,7 @@ public class DialogueBox : MonoBehaviour {
         {
             if (Mathf.FloorToInt(currentLetter) < theText.Length)
             {
-                Debug.Log(string.Format("{0} of {1}", currentLetter, theText.Length));
+//                Debug.Log(string.Format("{0} of {1}", currentLetter, theText.Length));
 
                 if (theText[Mathf.FloorToInt(currentLetter)] != ' ')
                 {

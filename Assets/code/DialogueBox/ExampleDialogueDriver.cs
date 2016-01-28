@@ -23,21 +23,20 @@ public class ExampleDialogueDriver : MonoBehaviour {
 	    renderThing.enabled = false;
 
 	    dialogueThing = GetComponent<DialogueBox>();
+	    dialogueThing.enabled = false;
 	}
 
     // Update is called once per frame
 	void Update ()
 	{
-	    if (currentPhase == 0)
+	    if (currentPhase == 0 && !seeded)
 	    {
 	        anim.enabled = true;
 	        renderThing.enabled = true;
-            if(dialogueItems.Count > 0)
-                dialogueThing.LoadDialogue(dialogueItems[0]);
-	        currentPhase = 1;
-
+	        dialogueThing.LoadDialogue(dialogueItems[currentPhase]);
+	        seeded = true;
 	    }
-        else if (currentPhase < dialogueItems.Count  && !seeded)
+        else if (currentPhase < dialogueItems.Count  && !seeded && dialogueItems.Count > 0 && currentPhase > 0)
         {
             dialogueThing.LoadDialogue(dialogueItems[currentPhase]);
             seeded = true;
@@ -86,5 +85,12 @@ public class ExampleDialogueDriver : MonoBehaviour {
     {
         anim.enabled = false;
         renderThing.enabled = false;
+        dialogueThing.enabled = false;
+    }
+
+    public void HeadsUp()
+    {
+        dialogueThing.enabled = true;
+        seeded = false;
     }
 }
