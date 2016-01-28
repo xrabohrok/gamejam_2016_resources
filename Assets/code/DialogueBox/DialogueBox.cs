@@ -35,12 +35,9 @@ public class DialogueBox : MonoBehaviour {
         {
             if (Mathf.FloorToInt(currentLetter) < theText.Length)
             {
-                float newLetter = currentLetter + Time.deltaTime*lettersPerSecond;
-                _sliceString = theText.Substring(0, Mathf.FloorToInt(newLetter));
+                Debug.Log(string.Format("{0} of {1}", currentLetter, theText.Length));
 
-                currentLetter = newLetter;
-
-                if (theText[Mathf.FloorToInt(newLetter)] != ' ')
+                if (theText[Mathf.FloorToInt(currentLetter)] != ' ')
                 {
                     wording = true;
                 }
@@ -48,14 +45,18 @@ public class DialogueBox : MonoBehaviour {
                 {
                     wording = false;
                 }
+
+                float newLetter = currentLetter + Time.deltaTime * lettersPerSecond;
+                _sliceString = theText.Substring(0, Mathf.FloorToInt(newLetter));
+
+                currentLetter = newLetter;
             }
             else
             {
                 finished = true;
             }
 
-            Debug.Log(currentLetter);
-            //finished = Mathf.FloorToInt(currentLetter) >= theText.Length;
+            //Debug.Log(currentLetter);
         }
         GUI.Box(buttonBorder, _sliceString, customSkin.box);
 
@@ -70,12 +71,5 @@ public class DialogueBox : MonoBehaviour {
         finished = false;
         currentLetter = 0f;
     }
-
-
-
-
-
-
-
 
 }
