@@ -986,7 +986,7 @@ GameObject:
   - 92: {fileID: 1398301462}
   - 124: {fileID: 1398301461}
   - 81: {fileID: 1398301460}
-  - 114: {fileID: 1398301465}
+  - 114: {fileID: 1398301466}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1061,7 +1061,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!114 &1398301465
+--- !u!114 &1398301466
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -1069,17 +1069,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1398301459}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c50c518f91511d4cb389e8d96da8bdf, type: 3}
+  m_Script: {fileID: 11500000, guid: 73db2a79f032c8e45b2fa4de61fc4bc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonWidthPercent: 0.76
-  buttonHeightPercent: 0.33
-  verticalButtonDisp: 0.32
-  horizontalButtonDisp: 0.5
-  lettersPerSecond: 5
-  customSkin: {fileID: 11400000, guid: dedd1d110ab03044796d32bb396f62bf, type: 2}
-  FrontStuff: {fileID: 717793721}
-  theText: Here is some text, blah blah blah blah
+  Activatee: {fileID: 2022888832}
 --- !u!1 &1559259475
 GameObject:
   m_ObjectHideFlags: 0
@@ -1603,3 +1596,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c2658b309346d446afafbd5ad4e0a28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueItems:
+  - Hello? Is this working?
+  - I guess so!
+  - This is something you don't want to have to figure out on the fly during a gamejam!
+  - Have you ever had to make two state machines play nice with each other?
+  - Maxwell had it easier!
+  - Anyway...
+  - This scene has a dialogue box that takes a custom skin and style
+  - It also contains a scene driver, and a fully animated character as well!
+  - All you need to have someone spout "helpful tips"!
+  - The character also has a fully realised animator, and some animation events to
+    use too!
+  - '...'
+  - Hey, if I wind up in your project, can you at least credit this creator?
+  - 'He would appreciate it.  '
+  - Anyways
+  - PEACE.
+--- !u!114 &2022888836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2022888832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c50c518f91511d4cb389e8d96da8bdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonWidthPercent: 0.76
+  buttonHeightPercent: 0.33
+  verticalButtonDisp: 0.32
+  horizontalButtonDisp: 0.5
+  lettersPerSecond: 13
+  customSkin: {fileID: 11400000, guid: dedd1d110ab03044796d32bb396f62bf, type: 2}
+  FrontStuff: {fileID: 717793721}
+  theText: Here is some text, blah blah blah blah

@@ -18,9 +18,7 @@ public class ExampleDialogueDriver : MonoBehaviour {
 	void Start ()
 	{
 	    anim = GetComponent<Animator>();
-	    anim.enabled = false;
 	    renderThing =  GetComponentInChildren<Renderer>();
-	    renderThing.enabled = false;
 
 	    dialogueThing = GetComponent<DialogueBox>();
 	    dialogueThing.enabled = false;
@@ -31,8 +29,6 @@ public class ExampleDialogueDriver : MonoBehaviour {
 	{
 	    if (currentPhase == 0 && !seeded)
 	    {
-	        anim.enabled = true;
-	        renderThing.enabled = true;
 	        dialogueThing.LoadDialogue(dialogueItems[currentPhase]);
 	        seeded = true;
 	    }
